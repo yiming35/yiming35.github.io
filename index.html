@@ -12,48 +12,68 @@
       font-family: "Sorts Mill Goudy", serif;
     }
 
-    .img-same-width {
-      width: 150px;
-      display: block;
+    .page {
+      display: grid;
+      grid-template-columns: 2fr 1fr; /* text | images */
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    .gallery img {
-      margin-top: 20px; 
+    .image-col img {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .img-same-width {
+      width: 150px;
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<h1>Yiming Song</h1>
-<p>I am an undergraduate student at Columbia University studying math.</p>
-<p>My email is ys3635 <span style="color: grey;">AT</span> columbia <span style="color: grey;">DOT</span> edu.</p>
+<div class="page">
+  <!-- LEFT COLUMN: TEXT -->
+  <div class="text-col">
+    <h1>Yiming Song</h1>
+    <p>I am an undergraduate student at Columbia University studying math.</p>
+    <p>My email is ys3635 <span style="color: grey;">AT</span> columbia <span style="color: grey;">DOT</span> edu.</p>
 
-<h2>Writing</h2>
-<p>All mistakes are my own.</p>
-<p>
-  Dec 2025.
-  <a href="https://yiming35.github.io/files/carousel_draft.pdf" target="_blank">
-    A carousel property for compact convex sets
-  </a>. Draft.
-</p>
-<p>
-  Nov 2025.
-  <a href="https://yiming35.github.io/files/gpcompletion_notes.pdf" target="_blank">
-    Notes
-  </a> on the group completion theorem.
-</p>
+    <h2>Writing</h2>
+    <p>All mistakes are my own.</p>
+    <p>
+      Dec 2025.
+      <a href="https://yiming35.github.io/files/carousel_draft.pdf" target="_blank">
+        A carousel property for compact convex sets
+      </a>. Draft.
+    </p>
+    <p>
+      Nov 2025.
+      <a href="https://yiming35.github.io/files/gpcompletion_notes.pdf" target="_blank">
+        Notes
+      </a> on the group completion theorem.
+    </p>
 
-<h2>Other</h2>
-<p>
-  Some of my
-  <a href="https://www.youtube.com/@yimingsong7300/videos" target="_blank">music</a>.
-</p>
+    <h2>Other</h2>
+    <p>
+      Some of my
+      <a href="https://www.youtube.com/@yimingsong7300/videos" target="_blank">music</a>.
+    </p>
+  </div>
 
-<div class="gallery">
-  <img src="pics/carousel-counterexamples.gif" class="img-same-width">
-  <img src="pics/000004200009.jpg" class="img-same-width">
-  <img src="pics/000013390013.jpg" class="img-same-width">
+  <!-- RIGHT COLUMN: IMAGES -->
+  <div class="image-col">
+    <img src="pics/carousel-counterexamples.gif" class="img-same-width">
+    <img src="pics/000004200009.jpg" class="img-same-width">
+    <img src="pics/000013390013.jpg" class="img-same-width">
+  </div>
 </div>
 
 </body>
