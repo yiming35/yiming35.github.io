@@ -20,7 +20,7 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: auto 1fr;  /* header row | content row */
-      gap: 40px;
+      gap: 10px;
       max-width: 1000px;
       margin: 0 auto;
       height: 100vh;
@@ -50,7 +50,7 @@
     .text-col,
     .image-col {
       overflow-y: auto;
-      padding-right: 10px;  /* prevents scrollbar overlap */
+      padding-right: 20px;  /* prevents scrollbar overlap */
     }
   </style>
 </head>
@@ -61,16 +61,15 @@
 
   <!-- ROW 1: HEADERS -->
   <div class="text-header">
-    <h2>About</h2>
   </div>
 
   <div class="image-header">
-    <h2>Pictures</h2>
   </div>
 
   <!-- ROW 2: CONTENT -->
   <div class="text-col">
-    <p>I am an undergraduate student at Columbia University studying math.</p>
+    <h2>About</h2>
+    <p>My name is Yiming Song, and I am an undergraduate student at Columbia University studying math.</p>
     <p>My email is ys3635 <span style="color: #555;">AT</span> columbia <span style="color: #555;">DOT</span> edu.</p>
 
     <h2>Writing</h2>
@@ -96,6 +95,7 @@
   </div>
 
   <div class="image-col">
+    <h2>Pictures</h2>
     <figure>
       <img src="pics/carousel-counterexamples.gif" alt="Carousel counterexamples">
       <figcaption>
