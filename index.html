@@ -9,9 +9,9 @@
 
   <style>
     html, body {
-      height: 100%;
       margin: 0;
     }
+
     body {
       font-family: "Sorts Mill Goudy", serif;
     }
@@ -23,7 +23,6 @@
       gap: 10px;
       max-width: 1000px;
       margin: 0 auto;
-      height: 100vh;
     }
 
     .image-col figure {
@@ -31,10 +30,9 @@
     }
 
     .image-col img {
-      width: 90%;  
+      width: 90%;
       height: auto;
     }
-
 
     .image-col figcaption {
       font-size: 0.9em;
@@ -42,15 +40,18 @@
       margin-top: 1px;
     }
 
+    /* REMOVE independent scrolling */
+    .text-col,
+    .image-col {
+      overflow: visible;
+      padding-right: 20px;
+    }
+
     @media (max-width: 800px) {
       .page {
         grid-template-columns: 1fr;
+        grid-template-rows: auto; /* let it flow naturally on mobile */
       }
-    }
-    .text-col,
-    .image-col {
-      overflow-y: auto;
-      padding-right: 20px;  /* prevents scrollbar overlap */
     }
   </style>
 </head>
@@ -60,11 +61,8 @@
 <div class="page">
 
   <!-- ROW 1: HEADERS -->
-  <div class="text-header">
-  </div>
-
-  <div class="image-header">
-  </div>
+  <div class="text-header"></div>
+  <div class="image-header"></div>
 
   <!-- ROW 2: CONTENT -->
   <div class="text-col">
@@ -96,30 +94,27 @@
 
   <div class="image-col">
     <h2>Pictures</h2>
+
     <figure>
       <img src="pics/carousel-counterexamples.gif" alt="Carousel counterexamples">
       <figcaption>
-        A construction from <a href="https://yiming35.github.io/files/carousel_draft.pdf" target="_blank">
-        this paper
-      </a>
+        A construction from
+        <a href="https://yiming35.github.io/files/carousel_draft.pdf" target="_blank">this paper</a>.
       </figcaption>
     </figure>
 
     <figure>
-      <img src="pics/000068990010.jpg" alt="Snow phoyo">
-      <figcaption>
-        Morningside and Central Park in the snow, 2024
-      </a>
-      </figcaption>
+      <img src="pics/000068990010.jpg" alt="Snow photo">
+      <figcaption>Morningside and Central Park in the snow, 2024</figcaption>
     </figure>
 
     <figure>
-      <img src="pics/000004200009.jpg" alt="Rice university photo">
+      <img src="pics/000004200009.jpg" alt="Rice University photo">
       <figcaption>Rice University, 2024</figcaption>
     </figure>
 
     <figure>
-      <img src="pics/000013390013.jpg" alt="brooklyn botanical gardens photo">
+      <img src="pics/000013390013.jpg" alt="Brooklyn Botanical Gardens photo">
       <figcaption>Brooklyn Botanical Gardens, 2024</figcaption>
     </figure>
 
@@ -128,8 +123,8 @@
       <figcaption>Me</figcaption>
     </figure>
   </div>
-</div>
 
+</div>
 
 </body>
 </html>
