@@ -8,16 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
     body {
       font-family: "Sorts Mill Goudy", serif;
     }
 
     .page {
       display: grid;
-      grid-template-columns: 2fr 1fr; /* text | images */
+      grid-template-columns: 2fr 1fr;
       gap: 40px;
       max-width: 1000px;
       margin: 0 auto;
+      height: 100vh;   /* ← important */
     }
 
     .image-col figure {
@@ -40,6 +45,11 @@
       .page {
         grid-template-columns: 1fr;
       }
+    }
+    .text-col,
+    .image-col {
+      overflow-y: auto;
+      padding-right: 10px;  /* prevents scrollbar overlap */
     }
   </style>
 </head>
