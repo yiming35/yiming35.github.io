@@ -19,7 +19,7 @@
     .page {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      grid-template-rows: auto 1fr;  /* header row | content row */
+      grid-template-rows: auto 1fr;
       gap: 10px;
       max-width: 1000px;
       margin: 0 auto;
@@ -40,7 +40,6 @@
       margin-top: 1px;
     }
 
-    /* REMOVE independent scrolling */
     .text-col,
     .image-col {
       overflow: visible;
@@ -50,8 +49,18 @@
     @media (max-width: 800px) {
       .page {
         grid-template-columns: 1fr;
-        grid-template-rows: auto; /* let it flow naturally on mobile */
+        grid-template-rows: auto;
       }
+    }
+
+    .cv-list {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .cv-item {
+      margin-bottom: 0.6em;
     }
   </style>
 </head>
@@ -66,24 +75,25 @@
 
   <!-- ROW 2: CONTENT -->
   <div class="text-col">
-    <h2>About</h2>
-    <p>My name is Yiming Song, and I am an undergraduate student at Columbia University studying math.</p>
+    <h1>Yiming Song</h1>
+    <p>I am an undergraduate student at Columbia University studying math.</p>
     <p>My email is ys3635 <span style="color: #555;">AT</span> columbia <span style="color: #555;">DOT</span> edu.</p>
 
-    <h2>Writing</h2>
-    <p>All mistakes are my own.</p>
-    <p>
-      Dec 2025.
-      <a href="https://yiming35.github.io/files/carousel_draft.pdf" target="_blank">
-        A carousel property for compact convex sets
-      </a>. Draft.
-    </p>
-    <p>
-      Nov 2025.
-      <a href="https://yiming35.github.io/files/gpcompletion_notes.pdf" target="_blank">
-        Notes
-      </a> on the group completion theorem.
-    </p>
+    <h2>Preprints / Writing</h2>
+      
+    <ul class="cv-list">
+      <li class="cv-item">
+        A carousel property for compact convex sets.
+        <a href="https://arxiv.org/abs/2512.14972" target="_blank">arXiv</a>
+      </li>
+
+      <li class="cv-item">
+        Notes on the group completion theorem.
+        <a href="https://yiming35.github.io/files/gpcompletion_notes.pdf" target="_blank">
+          Link
+        </a>
+      </li>
+    </ul>
 
     <h2>Other</h2>
     <p>
@@ -99,7 +109,7 @@
       <img src="pics/carousel-counterexamples.gif" alt="Carousel counterexamples">
       <figcaption>
         A construction from
-        <a href="https://yiming35.github.io/files/carousel_draft.pdf" target="_blank">this paper</a>.
+        <a href="https://arxiv.org/abs/2512.14972" target="_blank">this paper</a>.
       </figcaption>
     </figure>
 
