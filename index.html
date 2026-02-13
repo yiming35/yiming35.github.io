@@ -8,25 +8,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 
   <style>
-    html, body { margin: 0; }
-
+    html, body { margin: 0; font-weight: 500}
     body { font-family: "Cormorant Garamond", serif; }
 
+    /* responsive grid, stacks on mobile */
     .page {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      grid-template-rows: auto 1fr;
-      gap: 10px;
+      gap: 24px;
       max-width: 1000px;
       margin: 0 auto;
-      padding: 0 16px;
+      padding: 24px 16px;
     }
+
+    /* keep your header divs  */
+    .text-header, .image-header { }
 
     .image-col figure { margin: 0 0 20px 0; }
 
+    /* better image sizing */
     .image-col img {
-      width: 90%;
+      width: 100%;
+      max-width: 420px;  /* optional cap */
       height: auto;
+      display: block;
+      margin: 0 auto;    /* center images */
     }
 
     .image-col figcaption {
@@ -41,7 +47,13 @@
       padding: 0 20px 0 0;
     }
 
+    /* Mobile: stack columns and remove padding */
     @media (max-width: 800px) {
+      .page {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
       .text-col,
       .image-col { padding: 0; }
     }
@@ -62,47 +74,19 @@
 
     .sub-list li { margin-bottom: 0.2em; }
 
-    /* Collapsible section styling */
-    details.section {
-      margin: 14px 0;
+    h2 { margin-top: 24px; }
+
+    a {
+      color: #224ace;          /* normal link */
+      text-decoration: none;   /* optional: removes underline */
     }
 
-    details.section > summary {
-      list-style: none;         /* remove default marker in some browsers */
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1.35em;        /* similar to h2 size */
+    a:hover {
+      text-decoration: underline;  /* show underline on hover */
     }
 
-    /* Hide default triangle marker (Chrome/Safari) so it looks like your h2 */
-    details.section > summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details.section > summary {
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1.35em;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* create arrow */
-    details.section > summary::before {
-      content: "▸︎";   /* triangle + FE0E */
-      font-size: 0.8em;       
-      transition: transform 1s ease;
-    }
-
-    /* rotate arrow when open */
-    details.section[open] > summary::before {
-      transform: rotate(810deg);
-    }
-
-    /* Optional: subtle spacing when opened */
-    details.section[open] > summary {
-      margin-bottom: 8px;
+    a:visited {
+      color: #224ace;          /* visited links */
     }
   </style>
 </head>
@@ -110,7 +94,7 @@
 <body>
   <div class="page">
 
-    <!-- ROW 1: HEADERS -->
+    <!-- ROW 1: HEADERS (kept) -->
     <div class="text-header"></div>
     <div class="image-header"></div>
 
@@ -120,64 +104,58 @@
       <p>I am an undergraduate at Columbia University studying math.</p>
       <p>My email is ys3635 <span style="color: #555;">AT</span> columbia <span style="color: #555;">DOT</span> edu.</p>
 
-      <details class="section">
-        <summary>Preprints / Writing</summary>
+      <h2>Research</h2>
+      <ul class="cv-list">
+        <li class="cv-item">
+          A carousel property for compact convex sets.
+          <a href="https://arxiv.org/abs/2512.14972" target="_blank">arXiv</a>. Submitted.
+          <i><br> <span style="color: #555;">Talk <a href="https://yiming35.github.io/files/CarletonNew_compressed.pdf" target="_blank">slides</a> at Carleton University algorithms
+              <a href="https://www.bobby-miraftab.com/seminar" target="_blank"> seminar</a>.</span></i>
+        </li>
+      </ul>
+      <h2> Expository</h2>
+      <ul class="cv-list">
+        <li class="cv-item">
+          <a href="https://yiming35.github.io/files/HomStabNotes.pdf" target="_blank">Notes</a> on Quillen's framework for homological stability. <br> 
+        <i><span style="color: #555;">For the Manifolds and Homotopy Theory learning <a href="https://alvarado-alvarez.github.io/manifolds.html" target="_blank">seminar</a>.</span></i>
+        </li>
+        <li class="cv-item">
+          <a href="https://yiming35.github.io/files/gpcompletion_notes.pdf" target="_blank">Notes</a> on the group completion theorem.
+        </li>
+      </ul>
 
-        <ul class="cv-list">
-          <li class="cv-item">
-            A carousel property for compact convex sets.
-            <a href="https://arxiv.org/abs/2512.14972" target="_blank">arXiv</a>. Submitted.
-            <ul class="sub-list">
-              <li>
-                Talk <a href="https://yiming35.github.io/files/CarletonNew_compressed.pdf" target="_blank">slides</a> at Carleton University
-                <a href="https://www.bobby-miraftab.com/seminar" target="_blank">algorithms seminar</a>, Feb 2026.
-              </li>
-            </ul>
-          </li>
-
-          <li class="cv-item">
-            Notes on the group completion theorem.
-            <a href="https://yiming35.github.io/files/gpcompletion_notes.pdf" target="_blank">Link</a>
-          </li>
-        </ul>
-      </details>
-
-      <details class="section">
-        <summary>Other</summary>
-        <p>
-          Some of my
-          <a href="https://www.youtube.com/@yimingsong7300/videos" target="_blank">music</a>.
-        </p>
-      </details>
+      <h2>Other</h2>
+      <p>
+        Some of my
+        <a href="https://www.youtube.com/@yimingsong7300/videos" target="_blank">music</a>.
+      </p>
     </div>
 
     <div class="image-col">
-      <details class="section">
-        <summary>Pictures</summary>
+      <h2>Pictures</h2>
 
-        <figure>
-          <img src="pics/carousel-counterexamples.gif" alt="Carousel counterexamples">
-          <figcaption>
-            A construction from
-            <a href="https://arxiv.org/abs/2512.14972" target="_blank">this paper</a>.
-          </figcaption>
-        </figure>
+      <figure>
+        <img src="pics/carousel-counterexamples.gif" alt="Carousel counterexamples">
+        <figcaption>
+          A construction from
+          <a href="https://arxiv.org/abs/2512.14972" target="_blank">this paper</a>.
+        </figcaption>
+      </figure>
 
-        <figure>
-          <img src="pics/000068990010.jpg" alt="Snow photo">
-          <figcaption>Morningside and Central Park, 2025</figcaption>
-        </figure>
+      <figure>
+        <img src="pics/000068990010.jpg" alt="Snow photo">
+        <figcaption>Morningside and Central Park, 2025</figcaption>
+      </figure>
 
-        <figure>
-          <img src="pics/000004200009.jpg" alt="Rice University photo">
-          <figcaption>Rice University, 2024</figcaption>
-        </figure>
+      <figure>
+        <img src="pics/000004200009.jpg" alt="Rice University photo">
+        <figcaption>Rice University, 2024</figcaption>
+      </figure>
 
-        <figure>
-          <img src="pics/000013390013.jpg" alt="Brooklyn Botanical Gardens photo">
-          <figcaption>Brooklyn Botanical Gardens, 2024</figcaption>
-        </figure>
-      </details>
+      <figure>
+        <img src="pics/000013390013.jpg" alt="Brooklyn Botanical Gardens photo">
+        <figcaption>Brooklyn Botanical Gardens, 2024</figcaption>
+      </figure>
     </div>
 
   </div>
