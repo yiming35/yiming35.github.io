@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    html, body { margin: 0; font-weight: 500}
+    html, body { margin: 0; font-weight: 500 }
     body { font-family: "Cormorant Garamond", serif; }
 
     /* responsive grid, stacks on mobile */
@@ -55,7 +55,8 @@
       .image-col { padding: 0; }
     }
 
-    .cv-list {
+    /* default bullet list (kept for any UL usage elsewhere) */
+    ul.cv-list {
       list-style: disc;
       padding-left: 1.2em;
       margin-left: 0;
@@ -85,15 +86,18 @@
     a:visited {
       color: #224ace;          /* visited links */
     }
-    /* numbered CV list */
+
+    /* --- Reverse-numbered lists (newest at top, largest number at top) --- */
     ol.cv-list {
       padding-left: 1.4em;
       margin-left: 0;
     }
 
-    /* reverse numbering */
+    /* automatic reverse numbering via flex + CSS counters */
     ol.reversed {
       counter-reset: item;
+      display: flex;
+      flex-direction: column-reverse; /* makes numbering run "up" visually */
     }
 
     ol.reversed > li {
@@ -103,20 +107,12 @@
       margin-bottom: 0.6em;
     }
 
-    /* create the numbers */
     ol.reversed > li::before {
       content: counter(item) ". ";
       position: absolute;
       left: -1.4em;
       color: #555;
     }
-
-    /* THIS makes numbering run backwards */
-    ol.reversed {
-      display: flex;
-      flex-direction: column-reverse;
-    }
-
   </style>
 </head>
 
@@ -142,11 +138,12 @@
               <a href="https://www.bobby-miraftab.com/seminar" target="_blank"> seminar</a>.</span></i>
         </li>
       </ol>
-      <h2> Exposition</h2>
+
+      <h2>Exposition</h2>
       <ol class="cv-list reversed">
         <li class="cv-item">
-          <a href="https://yiming35.github.io/files/HomStabNotes.pdf" target="_blank">Notes</a> on Quillen's framework for homological stability. <br> 
-        <i><span style="color: #555;">For the Manifolds and Homotopy Theory learning <a href="https://alvarado-alvarez.github.io/manifolds.html" target="_blank">seminar</a>.</span></i>
+          <a href="https://yiming35.github.io/files/HomStabNotes.pdf" target="_blank">Notes</a> on Quillen's framework for homological stability. <br>
+          <i><span style="color: #555;">For the Manifolds and Homotopy Theory learning <a href="https://alvarado-alvarez.github.io/manifolds.html" target="_blank">seminar</a>.</span></i>
         </li>
         <li class="cv-item">
           <a href="https://yiming35.github.io/files/gpcompletion_notes.pdf" target="_blank">Notes</a> on the group completion theorem.
