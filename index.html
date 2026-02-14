@@ -85,6 +85,38 @@
     a:visited {
       color: #224ace;          /* visited links */
     }
+    /* numbered CV list */
+    ol.cv-list {
+      padding-left: 1.4em;
+      margin-left: 0;
+    }
+
+    /* reverse numbering */
+    ol.reversed {
+      counter-reset: item;
+    }
+
+    ol.reversed > li {
+      list-style: none;
+      counter-increment: item;
+      position: relative;
+      margin-bottom: 0.6em;
+    }
+
+    /* create the numbers */
+    ol.reversed > li::before {
+      content: counter(item) ". ";
+      position: absolute;
+      left: -1.4em;
+      color: #555;
+    }
+
+    /* THIS makes numbering run backwards */
+    ol.reversed {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
   </style>
 </head>
 
@@ -102,16 +134,16 @@
       <p>My email is ys3635 <span style="color: #555;">AT</span> columbia <span style="color: #555;">DOT</span> edu.</p>
 
       <h2>Research</h2>
-      <ul class="cv-list">
+      <ol class="cv-list reversed">
         <li class="cv-item">
           A carousel property for compact convex sets.
           <a href="https://arxiv.org/abs/2512.14972" target="_blank">arXiv</a>. Submitted.
           <i><br> <span style="color: #555;">Talk <a href="https://yiming35.github.io/files/CarletonNew_compressed.pdf" target="_blank">slides</a> at Carleton University algorithms
               <a href="https://www.bobby-miraftab.com/seminar" target="_blank"> seminar</a>.</span></i>
         </li>
-      </ul>
+      </ol>
       <h2> Exposition</h2>
-      <ul class="cv-list">
+      <ol class="cv-list reversed">
         <li class="cv-item">
           <a href="https://yiming35.github.io/files/HomStabNotes.pdf" target="_blank">Notes</a> on Quillen's framework for homological stability. <br> 
         <i><span style="color: #555;">For the Manifolds and Homotopy Theory learning <a href="https://alvarado-alvarez.github.io/manifolds.html" target="_blank">seminar</a>.</span></i>
@@ -119,7 +151,7 @@
         <li class="cv-item">
           <a href="https://yiming35.github.io/files/gpcompletion_notes.pdf" target="_blank">Notes</a> on the group completion theorem.
         </li>
-      </ul>
+      </ol>
 
       <h2>Other</h2>
       <p>
