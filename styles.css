@@ -1,3 +1,7 @@
+:root {
+  --homepage-photo-width: 100%;
+}
+
 html,
 body {
   margin: 0;
@@ -7,7 +11,9 @@ body {
 }
 
 .page {
-  max-width: 400px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 480px;
   margin: 0 auto;
   padding: 24px 40px 64px;
 }
@@ -59,6 +65,19 @@ img {
   max-width: 420px;
   height: auto;
   margin: 0 auto;
+}
+
+.homepage-photo-frame {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.homepage-photo {
+  flex: 0 1 var(--homepage-photo-width);
+  width: var(--homepage-photo-width);
+  max-width: 100%;
+  margin: 0;
 }
 
 figcaption {
