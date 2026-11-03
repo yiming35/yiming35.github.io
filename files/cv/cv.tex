@@ -1,0 +1,85 @@
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage[left=1.3in,right=1.3in,top=.85in,bottom=.85in]{geometry}
+\usepackage{MinionPro} 
+\usepackage{xcolor}
+\definecolor{navyblue}{HTML}{000080}
+\usepackage[colorlinks=true,allcolors=navyblue]{hyperref}
+\usepackage{bold-extra}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\raggedbottom
+\newcommand{\cvname}{Yiming Song}
+\newcommand{\cvdate}{Nov 2026}
+\newcommand{\cvweb}{https://yiming35.github.io/}
+\newcommand{\cvemail}{y.song@duke.edu}
+
+\newcommand{\cvsection}[1]{\par\addvspace{.65\baselineskip}%
+  {\raggedright\small\bfseries\textsc{#1}\par}\nobreak\vspace{.15\baselineskip}%
+  \hrule width \linewidth height .6pt\nobreak\vspace{.25\baselineskip}}
+
+\newcommand{\entry}[1]{\par\addvspace{.25\baselineskip}#1\par}
+
+\newcommand{\datedentry}[2]{\entry{%
+  \parbox[t]{\dimexpr\linewidth-8.4em\relax}{\raggedright #1}%
+  \hfill\makebox[7.8em][r]{#2}}}
+
+\newcommand{\detail}[1]{\par\nobreak\hspace*{1.25em}#1\par}
+
+\linespread{0.95}
+\begin{document}
+{\centering
+  {\large\textsc{\textbf{Yiming Song}}\par}
+  \vspace{.5\baselineskip}
+}
+\noindent
+\begin{minipage}[t]{.44\textwidth}
+  \raggedright
+  Department of Mathematics\par
+  Duke University\par
+  120 Science Drive, Durham, NC
+\end{minipage}\hfill
+\begin{minipage}[t]{.52\textwidth}
+  \raggedleft
+  \href{\cvweb}{\texttt{\cvweb}}\par
+  \href{mailto:\cvemail}{\texttt{\cvemail}}\par
+  Last updated November 2026.
+\end{minipage}\par
+
+\cvsection{Education}
+\datedentry{Ph.D. in Mathematics, Duke University}{2026--}
+\datedentry{B.A. in Mathematics, Columbia University}{2022--2026}
+\detail{\textit{Magna cum laude}, departmental honors}
+\detail{Senior thesis: \href{https://yiming35.github.io/files/Song_Thesis_Final.pdf}{\textit{The cobar construction and the fundamental group}}}
+\detail{Thesis advisor: S\o ren Galatius}
+\cvsection{Awards and honors}
+\datedentry{{Janet Liou-Mark Student Mathematics Award, MAA}}{2026}
+\datedentry{Dean's List, Columbia University}{2022--2026}
+\cvsection{Conferences and workshops}
+\datedentry{{Northeast Conference on Categorical Methods}, Harvard}{Nov 2026}
+\datedentry{{IWoAT Summer School on Stable Homotopy Theory, Beijing}}{Aug 2026}
+\datedentry{Joint Mathematics Meetings, Washington D.C.}{Jan 2026}
+
+\cvsection{Preprints}
+\begin{enumerate}
+\item \textit{Carousel theorems for compact sets and homothets}.
+\href{https://arxiv.org/abs/2512.14972}{arXiv:2512.14972}.
+\end{enumerate}
+
+
+\cvsection{Talks}
+\datedentry{\textit{A carousel property for compact convex sets}}{Feb 2026}
+\detail{Carleton University Algorithms Seminar, online}
+\datedentry{\textit{A carousel property for compact convex sets}}{Jan 2026}
+\detail{Joint Mathematics Meetings, Washington, DC}
+
+\cvsection{Teaching}
+\datedentry{Teaching Assistant, Columbia University}{2024--2026}
+\detail{GU4061 Introduction to Modern Analysis I}
+\detail{GU4041 Introduction to Modern Algebra I}
+\detail{UN1205 Accelerated Multivariable Calculus}
+\cvsection{Service}
+\datedentry{Volunteer, Emily K Center Math Circles}{Nov 2026--}
+\cvsection{Languages}
+\entry{English, Mandarin}
+\end{document}
